@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue au Concours
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f8f9fa;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.welcome-container {
+			text-align: center;
+			padding: 40px;
+			border-radius: 8px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+		}
+
+		.welcome-container h1 {
+			font-size: 2.5em;
+			margin-bottom: 20px;
+		}
+
+		.welcome-container p {
+			font-size: 1.2em;
+			line-height: 1.6;
+			color: #555;
+		}
+
+		.btn-enter {
+			display: inline-block;
+			padding: 10px 20px;
+			margin-top: 20px;
+			font-size: 1.2em;
+			text-decoration: none;
+			border-radius: 5px;
+			background-color: #007bff;
+			color: #fff;
+			transition: background-color 0.3s ease;
+		}
+
+		.btn-enter:hover {
+			background-color: #0056b3;
+		}
+	</style>
+{% endblock %}
+
+{% block body %}
+	<div class="welcome-container">
+		<h1>Bienvenue au Concours!</h1>
+		<p>Merci d'avoir rejoint notre concours. Nous sommes ravis de vous avoir parmi nous.</p>
+		<p>Participez et tentez votre chance pour gagner de superbes récompenses!</p>
+
+	</div>
+	<h1>Formation</h1>
+	{% for formation in formations %}
+		<div>
+			<h2>{{ formation.nomformation }}</h2>
+			<p>{{ formation.description }}</p>
+		</div>
+		<br>
+	{% endfor %}
+
+{% endblock %}

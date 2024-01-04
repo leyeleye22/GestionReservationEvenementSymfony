@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Serializer\Annotation\Groups;
  /**
      * @OA\Post(
      *     path="/api/postuler",
@@ -83,7 +84,6 @@ class CandidatureController extends AbstractController
         $candidature = new Candidature();
         $candidature->setUser($candidat);
         $candidature->setFormation($formation);
-
         $entityManager->persist($candidature);
         $entityManager->flush();
 

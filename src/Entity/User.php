@@ -92,6 +92,33 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
+        $roles[] = '
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ';
 
         return array_unique($roles);
     }
@@ -187,7 +214,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-   /**
+    /**
      * @ORM\ManyToMany(targetEntity=Role::class, inversedBy="users")
      */
     // private $roles;
@@ -197,9 +224,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     //     $this->roles = new ArrayCollection();
     // }
 
-    
 
-    
+
+
 
     public function addRole(Role $role): static
     {
